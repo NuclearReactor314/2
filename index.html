@@ -11,58 +11,63 @@
         body{
             background: pink;
         }
-         .container {
+        .container {
             position: relative;
             width: 240px;
             height: 120px;
             margin: 200px auto;
         }
-        .box{
+        .box {
             width: 120px;
             height: 120px;
             background: #f00;
             transform: rotate(45deg) scale(0.85);
-            margin: 200px auto;
+            position: absolute;
+            top: 0;
+            left: 60px;
             animation: love 1s infinite;
             box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
         }
-       .box.mirror {
+        .box.mirror {
             transform: rotate(45deg) scale(0.85) scaleX(-1);
         }
         .box::before,
-        .box::after{
+        .box::after {
             content: "";
-            position:absolute;
-            width: 120px;
+            position: absolute;
+            width: 12px;
             height: 120px;
             background: #f00;
             border-radius: 50%;
             box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
         }
-        .box::before{
+        .box::before {
             left: -68px;
         }
-        .box:: after{
+        .box::after {
             top: -68px;
         }
-        @keyframes love{
-            0%{
+        @keyframes love {
+            0% {
                 transform: rotate(45deg) scale(0.85);
             }
-            50%{
+            50% {
                 transform: rotate(45deg) scale(1);
             }
-            100%{
+            100% {
                 transform: rotate(45deg) scale(0.85);
             }
         }
-        p{
+        p {
             text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="box"></div>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box mirror"></div>
+    </div>
     <p>我是你的狗</p>
 </body>
 </html>
